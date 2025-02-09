@@ -1,0 +1,17 @@
+[ 2025-02-09 20:45:10,389 ] 17 root - INFO - create a dataingestion config class using datclass(without using init method)
+[ 2025-02-09 20:45:10,394 ] 25 root - INFO - create a data ingestion class
+[ 2025-02-09 20:45:10,394 ] 32 root - INFO - Data ingestion is started
+[ 2025-02-09 20:45:10,394 ] 34 root - INFO - read the dataset
+[ 2025-02-09 20:45:10,398 ] 37 root - INFO - create a directory for data path(train,test,raw)
+[ 2025-02-09 20:45:10,398 ] 41 root - INFO - read the dataset to raw path
+[ 2025-02-09 20:45:10,461 ] 44 root - INFO - train test split is started
+[ 2025-02-09 20:45:10,508 ] 94 root - INFO - read the train and test data
+[ 2025-02-09 20:45:10,572 ] 100 root - INFO - take the preprocessor obj for do data transformation
+[ 2025-02-09 20:45:10,575 ] 32 root - INFO - Data Transformation is started.
+[ 2025-02-09 20:45:10,575 ] 81 root - INFO - Data transformation is completed.
+[ 2025-02-09 20:45:10,588 ] 111 root - INFO - from the train  and test input data i have to drop target col
+[ 2025-02-09 20:45:10,596 ] 118 root - INFO - apply preprocesssor obj to the input train and test data
+[ 2025-02-09 20:45:10,635 ] 123 root - INFO - combine the input data along with target col
+[ 2025-02-09 20:45:10,637 ] 139 root - INFO - return train and test data and preprocessor file path
+[ 2025-02-09 20:45:10,638 ] 116 root - INFO - Split training and test input data
+[ 2025-02-09 20:45:13,951 ] 210 root - INFO - Best found model on both training and testing dataset
