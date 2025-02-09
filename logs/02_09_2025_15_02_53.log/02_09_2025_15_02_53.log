@@ -1,0 +1,10 @@
+[ 2025-02-09 15:02:55,110 ] 14 root - INFO - create a dataingestion config class using datclass(without using init method)
+[ 2025-02-09 15:02:55,111 ] 22 root - INFO - create a data ingestion class
+[ 2025-02-09 15:02:55,111 ] 29 root - INFO - Data ingestion is started
+[ 2025-02-09 15:02:55,111 ] 31 root - INFO - read the dataset
+[ 2025-02-09 15:02:55,135 ] 34 root - INFO - create a directory for data path(train,test,raw)
+[ 2025-02-09 15:02:55,136 ] 38 root - INFO - read the dataset to raw path
+[ 2025-02-09 15:02:55,203 ] 41 root - INFO - train test split is started
+[ 2025-02-09 15:02:55,272 ] 124 root - INFO - read the train and test data
+[ 2025-02-09 15:02:55,338 ] 128 root - INFO - Dropping unnecessary columns...
+[ 2025-02-09 15:02:55,340 ] 133 root - INFO - take the preprocessor obj for do data transformation

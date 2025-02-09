@@ -7,8 +7,12 @@ from src.exception import CustomException
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
+
 
 logging.info("create a dataingestion config class using datclass(without using init method)")
+@dataclass
 class DataIngestionConfig:
     train_data_path:str=os.path.join("artifacts",'train.csv')
     test_data_path:str=os.path.join("artifacts","test.csv")
@@ -25,7 +29,7 @@ class DataIngestion:
         logging.info("Data ingestion is started")
         try:
             logging.info("read the dataset")
-            df=pd.read_csv(r"E:\Resume Machine Learning Projects\Bangalore House Prices\notebook\Bengaluru_House_Data.csv")
+            df=pd.read_csv(r"E:\Resume Machine Learning Projects\Bangalore House Prices\notebook\cleaned.csv")
 
             logging.info("create a directory for data path(train,test,raw)")
 
@@ -51,4 +55,8 @@ class DataIngestion:
 
 if __name__=="__main__":
     obj=DataIngestion()
-    obj.initiate_data_ingestion()
+    train_data,test_data=obj.initiate_data_ingestion()
+
+
+    data_transformation=DataTransformation()
+    data_transformation.initiate_data_transformation(train_data,test_data)

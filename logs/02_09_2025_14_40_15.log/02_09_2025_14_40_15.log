@@ -1,0 +1,2 @@
+[ 2025-02-09 14:40:24,304 ] 14 root - INFO - create a dataingestion config class using datclass(without using init method)
+[ 2025-02-09 14:40:24,304 ] 22 root - INFO - create a data ingestion class
