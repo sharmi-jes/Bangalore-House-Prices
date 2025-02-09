@@ -1,0 +1,22 @@
+[ 2025-02-09 16:51:16,579 ] 17 root - INFO - create a dataingestion config class using datclass(without using init method)
+[ 2025-02-09 16:51:16,579 ] 25 root - INFO - create a data ingestion class
+[ 2025-02-09 16:51:16,579 ] 32 root - INFO - Data ingestion is started
+[ 2025-02-09 16:51:16,579 ] 34 root - INFO - read the dataset
+[ 2025-02-09 16:51:16,599 ] 37 root - INFO - create a directory for data path(train,test,raw)
+[ 2025-02-09 16:51:16,599 ] 41 root - INFO - read the dataset to raw path
+[ 2025-02-09 16:51:16,662 ] 44 root - INFO - train test split is started
+[ 2025-02-09 16:51:16,729 ] 107 root - INFO - read the train and test data
+[ 2025-02-09 16:51:16,785 ] 111 root - INFO - Dropping unnecessary columns...
+[ 2025-02-09 16:51:16,794 ] 116 root - INFO - take the preprocessor obj for do data transformation
+[ 2025-02-09 16:51:16,794 ] 45 root - INFO - Data Transformation is started.
+[ 2025-02-09 16:51:16,796 ] 94 root - INFO - Data transformation is completed.
+[ 2025-02-09 16:51:16,817 ] 127 root - INFO - from the train  and test input data i have to drop target col
+[ 2025-02-09 16:51:16,826 ] 134 root - INFO - apply preprocesssor obj to the input train and test data
+[ 2025-02-09 16:51:16,863 ] 139 root - INFO - combine the input data along with target col
+[ 2025-02-09 16:51:16,863 ] 155 root - INFO - return train and test data and preprocessor file path
+[ 2025-02-09 16:51:16,863 ] 25 root - INFO - take the x_train,x_test,y_train,y_test data
+[ 2025-02-09 16:51:16,863 ] 32 root - INFO - take the all models
+[ 2025-02-09 16:51:16,863 ] 43 root - INFO - apply evlaute model for train and test data
+[ 2025-02-09 16:51:16,876 ] 47 root - INFO - best model score is:
+[ 2025-02-09 16:51:16,876 ] 50 root - INFO - best model name is
+[ 2025-02-09 16:51:16,876 ] 55 root - INFO - best model from all is

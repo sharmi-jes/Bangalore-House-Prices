@@ -25,22 +25,9 @@ class DataTransformation:
    
     
     
-    def convert_sqft_to_num(self, sqft):
-        """
-        Converts sqft column to a single numeric value.
-        - If the value is a range (e.g., "1150 - 1194"), it takes the average.
-        - If it's already a number, it returns it as float.
-        - If it's not convertible, it returns NaN.
-        """
-        try:
-            if "-" in str(sqft):
-                vals = sqft.split("-")
-                return (float(vals[0]) + float(vals[1])) / 2  # Take the average
-            return float(sqft)
-        except:
-            return np.nan  # Return NaN for invalid values
+    
 
-    def get_data_transformation(self, train_df, test_df):
+    def get_data_transformation(self):
      try:
         logging.info("Data Transformation is started.")
 
@@ -49,13 +36,13 @@ class DataTransformation:
         cat_ordinal_features = ['size']
         num_features = ['bath', 'balcony', 'total_sqft']
 
-        # Convert total_sqft to numerical values
-        train_df["total_sqft"] = train_df["total_sqft"].apply(self.convert_sqft_to_num)
-        test_df["total_sqft"] = test_df["total_sqft"].apply(self.convert_sqft_to_num)
+        # # Convert total_sqft to numerical values
+        # train_df["total_sqft"] = train_df["total_sqft"].apply(self.convert_sqft_to_num)
+        # test_df["total_sqft"] = test_df["total_sqft"].apply(self.convert_sqft_to_num)
 
-        # Fill missing values for total_sqft
-        train_df["total_sqft"].fillna(train_df["total_sqft"].median(), inplace=True)
-        test_df["total_sqft"].fillna(test_df["total_sqft"].median(), inplace=True)
+        # # Fill missing values for total_sqft
+        # train_df["total_sqft"].fillna(train_df["total_sqft"].median(), inplace=True)
+        # test_df["total_sqft"].fillna(test_df["total_sqft"].median(), inplace=True)
 
         # Define numerical pipeline
         num_pipeline = Pipeline(
@@ -108,21 +95,18 @@ class DataTransformation:
             train_df=pd.read_csv(train_path)
             test_df=pd.read_csv(test_path)
 
-            logging.info("Dropping unnecessary columns...")
-            cols_to_drop = ["availability", "location", "society","Unnamed: 0"]  
-            train_df.drop(columns=cols_to_drop, inplace=True, errors="ignore")
-            test_df.drop(columns=cols_to_drop, inplace=True, errors="ignore")
+            
 
             logging.info("take the preprocessor obj for do data transformation")
 
-            preprocessor_obj = self.get_data_transformation(train_df, test_df)
+            preprocessor_obj = self.get_data_transformation()
 
 
             print(f"training data is {train_df.head(2)}")
             print(f"tesitng data {test_df.head(2)}")
 
             target_col_name="price"
-            num_features = ['bath', 'balcony',  'total_sqft'] 
+            # num_features = ['bath', 'balcony',  'total_sqft'] 
 
             logging.info("from the train  and test input data i have to drop target col")
             input_train_df=train_df.drop(columns=[target_col_name],axis=1)

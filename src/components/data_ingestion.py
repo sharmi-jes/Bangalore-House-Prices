@@ -10,6 +10,9 @@ from dataclasses import dataclass
 from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
 
+from src.components.model_trainer import ModelTrainer
+from src.components.model_trainer import ModelTrainerConfig
+
 
 logging.info("create a dataingestion config class using datclass(without using init method)")
 @dataclass
@@ -29,7 +32,7 @@ class DataIngestion:
         logging.info("Data ingestion is started")
         try:
             logging.info("read the dataset")
-            df=pd.read_csv(r"E:\Resume Machine Learning Projects\Bangalore House Prices\notebook\cleaned.csv")
+            df=pd.read_csv(r"E:\Resume Machine Learning Projects\Bangalore House Prices\notebook\pure_cleaned_data.csv")
 
             logging.info("create a directory for data path(train,test,raw)")
 
@@ -59,4 +62,7 @@ if __name__=="__main__":
 
 
     data_transformation=DataTransformation()
-    data_transformation.initiate_data_transformation(train_data,test_data)
+    train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
+
+    model_trainer=ModelTrainer()
+    print(model_trainer.initiate_model_trainer(train_arr,test_arr))
